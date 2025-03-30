@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Listing</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Find Your Perfect Car</h1>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search for cars..." />
+      <button id="searchBtn">Search Cars</button>
+    </div>
+  </header>
+
+  <section class="brands">
+    <h2>Explore Our Premium Brands</h2>
+    <div class="brand-logos">
+      <div>Audi</div>
+      <div>BMW</div>
+      <div>Ford</div>
+      <div>Mercedes</div>
+      <div>Peugeot</div>
+      <div>Volkswagen</div>
+    </div>
+  </section>
+
+  <section id="car-form-section">
+    <h2>Search for Your Dream Car</h2>
+    <form id="new-car-form" method="POST">
+      <label for="car-name">Car Name:</label>
+      <input type="text" id="car-name" placeholder="Enter Car Name" required>
+
+      <label for="car-model">Model:</label>
+      <input type="text" id="car-model" placeholder="Enter Car Model" required>
+
+      <label for="car-price">Price:</label>
+      <input type="number" id="car-price" placeholder="Enter Car Price" required>
+
+      <label for="car-image">Image URL:</label>
+      <input type="text" id="car-image" placeholder="Enter Image URL" required>
+
+      <button type="submit" id="submitCarBtn">Search Car</button>
+    </form>
+  </section>
+
+  <section class="listings">
+    <h2>Explore All Vehicles</h2>
+    <div class="car-list" id="car-list">
+      <!-- Car listings will be dynamically inserted by JS -->
+    </div>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+</html>
