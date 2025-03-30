@@ -38,3 +38,9 @@ newCarForm.addEventListener('submit', function(event) {
     alert('Please fill all fields!');
     return;
 }
+const newCar = {
+  name: inputName.value.trim(),
+  model: inputModel.value.trim(),
+  price: parseFloat(inputPrice.value),
+  image: inputImage.value.trim()
+};
