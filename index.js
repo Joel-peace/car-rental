@@ -63,3 +63,33 @@ fetch(BASE_URL, {
   console.error('Error adding car:', error);
 });
 });
+function updateCar(id) {
+  const carToUpdate = allCars.find(function(car) {
+      return car.id === id;
+  });
+
+  const updatedCar = {
+      name: prompt('Enter new name:', carToUpdate.name) || carToUpdate.name,
+      model: prompt('Enter new model:', carToUpdate.model) || carToUpdate.model,
+      price: parseFloat(prompt('Enter new price:', carToUpdate.price)) || carToUpdate.price,
+      image: prompt('Enter new image URL:', carToUpdate.image) || carToUpdate.image
+  };
+
+  fetch(`${BASE_URL}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedCar)
+  })
+  .then(function(response) {
+      if (!response.ok) {
+          throw new Error('Failed to update car');
+      }
+      return response.json();
+  })
+  .then(function() {
+      fetchCars();
+  })
+  .catch(function(error) {
+      console.error('Error updating car:', error);
+  });
+}
