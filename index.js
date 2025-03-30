@@ -34,3 +34,7 @@ function fetchCars() {
 }
 newCarForm.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent the page from refreshing
+  if (!inputName.value || !inputModel.value || !inputPrice.value || !inputImage.value) {
+    alert('Please fill all fields!');
+    return;
+}
