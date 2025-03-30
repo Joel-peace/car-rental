@@ -33,3 +33,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+.search-bar button:hover {
+  background: #003d82;
+}
