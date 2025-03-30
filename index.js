@@ -44,3 +44,22 @@ const newCar = {
   price: parseFloat(inputPrice.value),
   image: inputImage.value.trim()
 };
+fetch(BASE_URL, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(newCar)
+})
+.then(function(response) {
+  if (!response.ok) {
+      throw new Error('Failed to add car');
+  }
+  return response.json();
+})
+.then(function() {
+  newCarForm.reset(); // Clear the form fields
+  fetchCars(); // Refresh the car list
+})
+.catch(function(error) {
+  console.error('Error adding car:', error);
+});
+});
