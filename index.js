@@ -32,3 +32,5 @@ function fetchCars() {
           console.error('Error fetching cars:', error);
       });
 }
+newCarForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the page from refreshing
