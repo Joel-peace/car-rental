@@ -12,3 +12,7 @@ const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('searchBtn');
 
 let allCars = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetchCars();
+});
