@@ -16,3 +16,19 @@ let allCars = [];
 document.addEventListener('DOMContentLoaded', function() {
   fetchCars();
 });
+function fetchCars() {
+  fetch(BASE_URL)
+      .then(function(response) {
+          if (!response.ok) {
+              throw new Error('Failed to fetch cars');
+          }
+          return response.json();
+      })
+      .then(function(carsData) {
+          allCars = carsData; // Store fetched cars
+          renderCars(allCars); // Display them on the page
+      })
+      .catch(function(error) {
+          console.error('Error fetching cars:', error);
+      });
+}
