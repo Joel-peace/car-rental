@@ -93,3 +93,18 @@ function updateCar(id) {
       console.error('Error updating car:', error);
   });
 }
+function deleteCar(id) {
+  if (confirm('Are you sure you want to delete this car?')) {
+      fetch(`${BASE_URL}/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deleted: true })
+      })
+      .then(function() {
+          fetchCars();
+      })
+      .catch(function(error) {
+          console.error('Error deleting car:', error);
+      });
+  }
+}
