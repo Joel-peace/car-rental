@@ -108,3 +108,21 @@ function deleteCar(id) {
       });
   }
 }
+searchBtn.addEventListener('click', function() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (!query) {
+      renderCars(allCars);
+      return;
+  }
+
+  const filteredCars = allCars.filter(function(car) {
+      return (
+          (car.name && car.name.toLowerCase().includes(query)) ||
+          (car.model && car.model.toLowerCase().includes(query))
+      );
+  });
+
+  renderCars(filteredCars);
+});
+
