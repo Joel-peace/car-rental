@@ -39,7 +39,7 @@ body {
   cursor: pointer;
 }
 .search-bar button:hover {
-  background: #003d82; /* Fixed hover color */
+  background: #003d82; 
 }
 
 /* Brands Section */
@@ -126,18 +126,17 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Image Fix to Prevent Jumpiness */
 .car-card img {
   max-width: 100%;
-  height: 180px;  /* Fixed height to prevent layout shift */
+  height: 180px;  
   object-fit: cover;
   display: block;
   margin-bottom: 10px;
-  opacity: 1;  /* Changed from 0 to 1 to prevent flickering */
+  opacity: 1;  /*
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Responsive Tweaks */
+
 @media (max-width: 600px) {
   .search-bar input {
       width: 100%;
